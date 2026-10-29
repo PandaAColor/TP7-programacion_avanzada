@@ -1,0 +1,11 @@
+{
+  "name": "@rutasur/simulator",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "src/index.js",
+  "dependencies": {
+    "@rutasur/shared": "*",
+    "kafkajs": "^2.2.4",
+    "seedrandom": "^3.0.5"
+  }
+}

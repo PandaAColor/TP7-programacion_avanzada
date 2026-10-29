@@ -1,0 +1,21 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+RUN apk add --no-cache bash
+
+COPY package.json package-lock.json* ./
+COPY shared/package.json ./shared/
+COPY simulator/package.json ./simulator/
+COPY projector/package.json ./projector/
+COPY notifications/package.json ./notifications/
+COPY rescheduler/package.json ./rescheduler/
+COPY sla-monitor/package.json ./sla-monitor/
+COPY analytics/package.json ./analytics/
+COPY web/package.json ./web/
+
+RUN npm install
+
+COPY . .
+
+CMD ["node", "--version"]

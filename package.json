@@ -1,0 +1,32 @@
+{
+  "name": "rutasur",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "shared",
+    "simulator",
+    "projector",
+    "notifications",
+    "rescheduler",
+    "sla-monitor",
+    "analytics",
+    "web"
+  ],
+  "scripts": {
+    "up": "docker compose up -d --build",
+    "down": "docker compose down -v",
+    "logs": "docker compose logs -f",
+    "reset": "bash scripts/reset.sh"
+  },
+  "dependencies": {
+    "kafkajs": "^2.2.4",
+    "mongodb": "^6.8.0",
+    "seedrandom": "^3.0.5",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "postcss": "^8.5.32",
+    "tailwindcss": "^4.3.3"
+  }
+}
